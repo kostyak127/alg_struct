@@ -3,11 +3,15 @@ from array import array
 
 class FirstLabArray:
     def __init__(self):
-        self.N = int(input('input array length '))
-        self.new_array = self.get_array_from_str(input('input array like 1,2,3,5,6,7... '))
-        self.T = int(input('input T '))
+        self.N, self.new_array, self.T = self.ask_data()
 
         print(self.result)
+
+    def ask_data(self) -> tuple:
+        N = int(input('input array length '))
+        new_array = self.get_array_from_str(input('input array like 1,2,3,5,6,7... '))
+        T = int(input('input T '))
+        return N, new_array, T
 
     @staticmethod  # Need to correct array format after input
     def get_array_from_str(string_array: str) -> array:
@@ -27,4 +31,5 @@ class FirstLabArray:
         return result if is_found else 0
 
 
-FirstLabArray()
+if __name__ == '__main__':
+    FirstLabArray()
