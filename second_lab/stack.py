@@ -1,29 +1,31 @@
 from collections import deque
-from typing import NoReturn
 
 
 class Stack:
     def __init__(self):
-        self.new_stack = deque()
-        self.ask_data()  # input data
-        print(self.result)
+        self.new_stack = self.ask_data()  # input data and write it to stack
+        self.result = self.count_result()
 
         self.result_stack = deque()
         self.result_stack.append(self.result)  # add res to stack
 
-    @property
-    def result(self):
+    def count_result(self):
         result = 0
         while self.new_stack:
             elem = self.new_stack.pop()
             result += elem if elem % 2 else 0
+
         return result
 
-    def ask_data(self) -> NoReturn:
+    @staticmethod
+    def ask_data() -> deque:
+        new_stack = deque()
         stack_length = int(input('input stack length '))
 
         for _ in range(stack_length):
-            self.new_stack.append(int(input('input element to stack ')))
+            new_stack.append(int(input('input element to stack ')))
+
+        return new_stack
 
 
 if __name__ == '__main__':
