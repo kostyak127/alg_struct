@@ -1,6 +1,3 @@
-from typing import NoReturn
-
-
 class Solution:
     def __init__(self):
         self.string = self.ask_data()
@@ -11,16 +8,13 @@ class Solution:
     def ask_data() -> str:
         return input('input string: ')
 
-    def print_letters(self) -> NoReturn:
+    def get_letters(self) -> list:
         for letter in self.string:
             if letter in self.russian_letters:
                 self.letters_set.add(letter)
-
-        sorted_letters = sorted(list(self.letters_set))
-        for letter in sorted_letters:
-            print(letter)
+        return sorted(list(self.letters_set))
 
 
 if __name__ == '__main__':
     s = Solution()
-    s.print_letters()
+    print(*s.get_letters())
