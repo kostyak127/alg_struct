@@ -19,5 +19,6 @@ class Solution:
                 self.even._put(elem)
         print(self.odd._get())
 
+
 if __name__ == '__main__':
     Solution().pull_queues()

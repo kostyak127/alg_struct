@@ -6,8 +6,8 @@ class Stack:
         self.new_stack = self.ask_data()  # input data and write it to stack
         self.result = self.count_result()
 
-        self.result_stack = deque()
-        self.result_stack.append(self.result)  # add res to stack
+        # self.result_stack = deque()
+        self.new_stack.append(self.result)  # add res to stack
 
     def count_result(self):
         result = 0
